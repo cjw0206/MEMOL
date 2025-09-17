@@ -1,0 +1,22 @@
+conda create -n MEMOL_cu121 python=3.9
+conda activate MEMOL_cu121
+pip install torch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 --index-url https://download.pytorch.org/whl/cu121
+pip install torch-scatter torch-sparse torch-cluster torch-spline-conv torch-geometric -f https://data.pyg.org/whl/torch-2.1.0+cu121.html
+pip install molfeat --no-deps
+# conda install -c conda-forge rdkit=2023.09.6
+pip install rdkit-pypi==2022.9.5
+conda install -c conda-forge datamol
+# pip install datamol
+pip install pmapper
+pip install h5py
+
+pip install timm --no-deps
+pip install huggingface_hub
+pip install scikit-learn
+pip install pandas==2.0.3
+
+python label_plus_smiles.py
+python smiles_to_image.py
+python smiles_to_graph.py
+# python smiles_to_fp_ae_train.py
+python MEMOL_main.py
